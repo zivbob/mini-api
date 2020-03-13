@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ziv.mini.modules.dao.GoodsMapper">
+
+    <!--查询分页-->
+    <select id="page" parameterType="string" resultType="com.ziv.mini.modules.entity.Goods">
+        SELECT goodsId, goodsCode, goodsName, goodsCount, goodsPrice, goodsImage, createTime, updateTime
+        FROM goods
+        WHERE deleteFlag = 0
+        <if test="searchKeyWord != null and searchKeyWord != ''">
+            AND goodsName LIKE CONCAT("%", #{searchKeyWord}, "%")
+        </if>
+        ORDER BY updateTime DESC
+    </select>
+</mapper>

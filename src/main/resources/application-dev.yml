@@ -1,0 +1,52 @@
+# 开发环境配置
+
+# 数据库配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mini?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      # 最小空闲连接数量
+      minimum-idle: 5
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      # 从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 连接池母子
+      pool-name: MyHikariCP
+      # 池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒
+      connection-timeout: 30000
+      # 连接测试sql
+      connection-test-query: SELECT 1
+
+  servlet:
+    multipart:
+      # 上传文件最大值
+      max-file-size: 10MB
+
+
+# 小程序配置
+wx:
+  mini:
+    appid: wxad89b801ac9479ad
+    secret: 645d741eee09d3eb022b7ae7b1902aa8
+    token: IQknCX1CWmfLG8jlDJDIuyBz375PiKxK
+    aesKey: sXMNR3cgmtkluI0ZZWuAT3ijz5nKb1hqBpgKRs2AdGT
+    msgDataFormat: JSON
+
+# 开启小程序功能日志
+logging:
+  level:
+    com.github.binarywang.demo.wx.miniapp: debug
+    cn.binarywang.wx.miniapp: debug
+
+fileSavePath: F:\\res\\
+
+resourcePath: /res

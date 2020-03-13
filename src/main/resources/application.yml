@@ -1,0 +1,21 @@
+server:
+  port: 8900
+
+spring:
+  profiles:
+    active: dev
+
+# mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mappers/**/*Mapper.xml
+  type-aliases-package: com.cis.gov.dao
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+
+# 分页插件
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true

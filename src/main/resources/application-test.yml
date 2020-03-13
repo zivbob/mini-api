@@ -1,0 +1,10 @@
+# 测试环境配置
+
+# 小程序配置
+wx:
+  miniapp:
+    appid: wxad89b801ac9479ad
+    secret: 1859f2e5f43280354751050dcf568911
+    token: IQknCX1CWmfLG8jlDJDIuyBz375PiKxK
+    aesKey: sXMNR3cgmtkluI0ZZWuAT3ijz5nKb1hqBpgKRs2AdGT
+    msgDataFormat: JSON
