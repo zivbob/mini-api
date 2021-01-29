@@ -1,5 +1,6 @@
 package com.ziv.mini.modules.service;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -19,7 +20,7 @@ import java.util.Date;
  * @date 2020-02-28
  */
 @Service
-public class GoodsService {
+public class GoodsService extends ServiceImpl<GoodsMapper, Goods> {
 
     @Resource
     private GoodsMapper goodsMapper;
@@ -46,15 +47,6 @@ public class GoodsService {
         goods.setCreateTime(new Date());
         goods.setUpdateTime(new Date());
         goodsMapper.insert(goods);
-    }
-
-    /**
-     * 更新商品信息
-     * @param goods 商品信息
-     */
-    public void updateById(Goods goods) {
-        goods.setUpdateTime(new Date());
-        goodsMapper.updateById(goods);
     }
 
     /**
